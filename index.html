@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - TOCKEN.05</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFINITE GAMER</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            position: relative;
+        }
+
+        .header-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            color: #ffeb3b;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .input-data {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .input-data input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            max-width: 300px;
+        }
+
+        .input-data input:focus {
+            border-color: #ffcc00;
+            outline: none;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .section-title img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #666;
+            margin: 0;
+        }
+
+        .product-selection {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .product-card {
+            flex: 1 1 calc(33.333% - 10px);
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .product-card img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .product-card .product-info {
+            flex-grow: 1;
+        }
+
+        .product-card p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .product-card:hover, .product-card.selected {
+            background-color: #ffcc00;
+            color: #000;
+        }
+
+        .payment-selection {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .payment-option {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .payment-option img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .payment-option:hover, .payment-option.selected {
+            background-color: #ffcc00;
+            color: #000;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 30px;
+            background-color: #f0f0f0;
+            color: #333;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        button:hover, button:active {
+            background-color: #ffcc00;
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .product-card {
+                flex: 1 1 calc(50% - 10px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                flex: 1 1 calc(30% - 10px);
+                padding: 5px;
+            }
+
+            .product-card img {
+                width: 24px;
+                height: 24px;
+            }
+
+            .product-card p {
+                font-size: 12px;
+            }
+
+            .input-data {
+                flex-direction: column;
+            }
+
+            .payment-selection {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://i.ibb.co/kMwt044/infinitelogomlb.jpg" alt="Header Image" class="header-image">
+            <h1>INFINITE GAMER</h1>
+        </header>
+        <div class="input-data">
+            <input type="text" id="userId" placeholder="Input User ID">
+            <input type="text" id="zoneId" placeholder="Input Zone ID">
+            <p>Please enter your User ID & Server and make sure it is correct. Example: 12345678(1234).</p>
+        </div>
+
+        <div class="section-title">
+            <img src="https://static-src.vocagame.com/dstoregame/snapedit_1717083419593-8625-original.png" alt="Select Service Icon" class="title-icon">
+            <h3>RECHARGE ANY AMOUNT OF DIAMONDS</h3>
+        </div>
+        <div class="product-selection">
+            <div class="product-card" onclick="selectProduct(this)">
+                <div class="product-image">
+                    <img src="https://static-src.vocagame.com/dstoregame/snapedit_1717083419593-8625-original.png" alt="Product 1 Image">
+                    <div class="product-info">
+                        <p>5 PREDiamonds</p>
+                        <p>INR 20</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" onclick="selectProduct(this)">
+                <div class="product-image">
+                    <img src="https://static-src.vocagame.com/dstoregame/snapedit_1717083419593-8625-original.png" alt="Product 2 Image">
+                    <div class="product-info">
+                        <p>11 PREDiamonds</p>
+                        <p>INR 25</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" onclick="selectProduct(this)">
+                <div class="product-image">
+                    <img src="https://static-src.vocagame.com/dstoregame/snapedit_1717083419593-8625-original.png" alt="Product 3 Image">
+                    <div class="product-info">
+                        <p>14 PREDiamonds</p>
+                        <p>INR 30</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <img src="https://static-src.vocagame.com/dstoregame/snapedit_1717083419593-8625-original.png" alt="Select Service Icon" class="title-icon">
+            <h3>RECHARGE 100 DIAMONDS</h3>
+        </div>
+        <div class="product-selection">
+            <div class="product-card" onclick="selectProduct(this)">
+                <div class="product-image">
+                    <img src="https://static-src.vocagame.com/dstoregame/snapedit_1717083419593-8625-original.png" alt="Product 4 Image">
+                    <div class="product-info">
+                        <p>PREWeekly Pass</p>
+                        <p>INR 160</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" onclick="selectProduct(this)">
+                <div class="product-image">
+                    <img src="https://static-src.vocagame.com/dstoregame/snapedit_1717083419593-8625-original.png" alt="Product 5 Image">
+                    <div class="product-info">
+                        <p>112 PREDiamond(102+10Bonus)</p>
+                        <p>INR 170</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" onclick="selectProduct(this)">
+                <div class="product-image">
+                    <img src="https://static-src.vocagame.com/dstoregame/snapedit_1717083419593-8625-original.png" alt="Product 6 Image">
+                    <div class="product-info">
+                        <p>172 PREDiamond(156 + 16 Bonus)</p>
+                        <p>INR 240</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <img src="https://static-src.vocagame.com/dstoregame/snapedit_1717083419593-8625-original.png" alt="Select Service Icon" class="title-icon">
+            <h3>RECHARGE 250 DIAMONDS</h3>
+        </div>
+        <div class="product-selection">
+            <div class="product-card" onclick="selectProduct(this)">
+                <div class="product-image">
+                    <img src="https://static-src.vocagame.com/dstoregame/snapedit_1717083419593-8625-original.png" alt="Product 7 Image">
+                    <div class="product-info">
+                        <p>PRE 172 + Weekly Pass</p>
+                        <p>INR 400</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" onclick="selectProduct(this)">
+                <div class="product-image">
+                    <img src="https://static-src.vocagame.com/dstoregame/snapedit_1717083419593-8625-original.png" alt="Product 8 Image">
+                    <div class="product-info">
+                        <p>3 x PREWeekly Pass</p>
+                        <p>INR 450</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" onclick="selectProduct(this)">
+                <div class="product-image">
+                    <img src="https://static-src.vocagame.com/dstoregame/snapedit_1717083419593-8625-original.png" alt="Product 9 Image">
+                    <div class="product-info">
+                        <p>344 PREDiamond(312 + 32 Bonus)</p>
+                        <p>INR 480</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <img src="https://th.bing.com/th?id=OIP.QDT0BBYtna1tMdci6KyTvQHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="Select Payment Icon" class="title-icon">
+            <h2>Select Payment Method</h2>
+        </div>
+        <div class="payment-selection">
+            <div class="payment-option" onclick="selectPayment(this)">
+                <img src="https://hubscredits.com/assets/images/method/1705176146_4b314268cc3218fd5099.png" alt="Google Pay">
+                <span>Google Pay</span>
+            </div>
+            <div class="payment-option" onclick="selectPayment(this)">
+                <img src="https://i.ibb.co/KxNLWV9/download-1.jpg" alt="Paytm">
+                <span>Paytm</span>
+            </div>
+            <div class="payment-option" onclick="selectPayment(this)">
+                <img src="https://hubscredits.com/assets/images/method/1705176253_4b69045b0e446ecf320c.png" alt="PhonePe">
+                <span>PhonePe</span>
+            </div>
+            <div class="payment-option" onclick="selectPayment(this)">
+                <img src="https://th.bing.com/th?id=OIP.qfJJ1njgKoWJQWt0mImfIgHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="Cash">
+                <span>Cash</span>
+            </div>
+        </div>
+        <button onclick="orderNow()">ORDER NOW</button>
+    </div>
+    <script>
+        let selectedProduct = null;
+        let selectedPayment = null;
+
+        function selectProduct(element) {
+            if (selectedProduct) {
+                selectedProduct.classList.remove('selected');
+            }
+            selectedProduct = element;
+            element.classList.add('selected');
+        }
+
+        function selectPayment(element) {
+            if (selectedPayment) {
+                selectedPayment.classList.remove('selected');
+            }
+            selectedPayment = element;
+            element.classList.add('selected');
+        }
+
+        function orderNow() {
+            const userId = document.getElementById('userId').value;
+            const zoneId = document.getElementById('zoneId').value;
+
+            if (!userId || !zoneId || !selectedProduct || !selectedPayment) {
+                alert('Please fill in all fields and select a product and payment method.');
+                return;
+            }
+
+            const productInfo = selectedProduct.querySelector('.product-info').innerText;
+            const paymentMethod = selectedPayment.querySelector('span').innerText;
+
+            const message = `User ID: ${userId}\nZone ID: ${zoneId}\nProduct: ${productInfo}\nPayment Method: ${paymentMethod}`;
+            const whatsappUrl = `https://wa.me/8414075796?text=${encodeURIComponent(message)}`;
+
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
